@@ -6,5 +6,9 @@ import './assets/main.css'
 
 
 createApp(App)
-.use(toolTipPlugin, {option1: true})
+.use(toolTipPlugin, {
+    placement: "right",
+    trigger: "click",
+    hideOnClick:false,
+})
 .mount('#app')

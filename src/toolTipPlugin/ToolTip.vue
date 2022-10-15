@@ -2,7 +2,9 @@
 <script setup>
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
-import {onMounted, onUpdated, onUnmounted, ref} from 'vue';
+import {onMounted, onUpdated, onUnmounted, inject, ref} from 'vue';
+import {tooltipOptionsInject} from './';
+
 const props = defineProps({
     text: {type: String, required: true},
     options: { type: Object, default() { return {} }}
@@ -14,6 +16,7 @@ let tippyInstance = null;   // to be able to have only one ToolTip during update
 function initTippy() {
     if (tippyInstance) tippyInstance.destroy();
     tippyInstance = tippy(tooltip.value.parentNode, {
+        ...inject(tooltipOptionsInject),  // this option needs to be on the top to ovverride tippy options
         content: props.text,
         ...props.options
     });
