@@ -9,5 +9,5 @@ createApp(App)
 .use(createToolTipPlugin({
     arrow: true,
     placement: "top",
-}), {})
+}))
 .mount('#app')

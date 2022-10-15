@@ -1,5 +1,16 @@
 {
-  "name": "vue-plugin-test",
+  "name": "sweet-tippy-vue",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/sweet-tippy-vue.umd.cjs",
+  "module": "./dist/sweet-tippy-vue.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sweet-tippy-vue.js",
+      "require": "./dist/sweet-tippy-vue.umd.cjs"
+    },
+    "./styles.css": "./dist/style.css"
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
